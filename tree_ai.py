@@ -51,7 +51,6 @@ class TreeAi:
         best_moves = [move for move, score in move_scores.items() if score == max_score]
         best_move = random.choice(best_moves)
         best_score = move_scores[best_move]
-        print(f"\nPlaying move {best_move} with move score: {best_score}")
         return best_move, best_score
     
     def quick_move_ordering(self, game, moves, reverse):

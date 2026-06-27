@@ -38,6 +38,10 @@ class Game:
             return -1
     
     def create_winning_map(self):
+        """
+        Creates a dictionary with each move as key and a list with the possible 
+        win combinations where the move is included as value.
+        """
         winning_combinations = []
 
         # Generates rows
@@ -87,6 +91,7 @@ class Game:
             if len(d) >= self.n_to_win:
                 winning_combinations.append(d)
         
+
         for row in range(1, self.grid_size):
             d = []
             for i in range(self.grid_size - row):
@@ -95,6 +100,8 @@ class Game:
                 winning_combinations.append(d)
 
 
+        # Generates all possible winning combinations
+        # Maps each move to corresponding winning combinations
         for combination in winning_combinations:
             start = 0
             end = start + self.n_to_win
@@ -112,7 +119,6 @@ class Game:
                         self.winning_combinations_map[i] = [winning_set]
                 start += 1
                 end += 1
-
 
     def check_game_over(self, last_move):
         """
@@ -137,6 +143,9 @@ class Game:
         return 0
     
     def get_winning_squares(self, last_move):
+        """
+        Returns the squares that contributed to a win if a win has occured
+        """
         player = -self.current_player
         win_check = player * self.n_to_win
 

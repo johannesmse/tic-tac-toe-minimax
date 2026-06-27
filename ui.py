@@ -260,8 +260,7 @@ class UI:
             text_rect = text_surface.get_rect(center=(cfg.WINDOW_WIDTH // 2, self.board_top_left_y // 2))
             self.screen.blit(text_surface, text_rect)
 
-
-        # Display Winner or Draw messages on screen
+        # Display Winner or Draw message on screen
         if self.winner is None:
             return
         
@@ -310,7 +309,8 @@ class UI:
                 # Requests a move on the current position from hard mode
                 ai_move = self._get_ai_move()
                 self._apply_move(ai_move)
-                    
+            
+            # Changes grid size
             elif self.three_by_three_button.collidepoint(event.pos) and self.grid_size != 3:
                 self._change_grid_size(3, 3)
             
