@@ -4,8 +4,11 @@ A TTT game made in python using Pygame. Includes a minimax AI.
 
 ## How to run
 ```bash
-python main.py
+python3 main.py
 ```   
+
+## UI
+![TTT UI](images/ui_image.png)
 ## Game modes
 Friendly mode : local two-player mode.    
 Easy mode : AI plays random moves.  
